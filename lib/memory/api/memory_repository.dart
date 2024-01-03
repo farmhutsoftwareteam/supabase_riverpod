@@ -17,7 +17,7 @@ class MemoryRepository {
   RealtimeChannel get memoryChannel => _client.channel('public:memories');
 
   Future<List<Memory>> getMemories() => _client
-      .from('memories')
+      .from('chats')
       .select<List<Map<String, dynamic>>>(
           'id, title, created_at, image_id, profiles (id, username)')
       .order('created_at')
